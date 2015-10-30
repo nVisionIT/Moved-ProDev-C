@@ -85,7 +85,7 @@ IF !ERRORLEVEL! NEQ 0 goto error
 
 :: 3. Running tests
 echo Running tests
-START  https://api.runscope.com/radar/a736d6dd-d009-4dbd-844a-685e6df4c258/trigger?runscope_environment=aaf4e675-d34a-4593-8a9f-0f842a3a1529
+::START  https://api.runscope.com/radar/a736d6dd-d009-4dbd-844a-685e6df4c258/trigger?runscope_environment=aaf4e675-d34a-4593-8a9f-0f842a3a1529
 
 
 IF !ERRORLEVEL! NEQ 0 goto error
