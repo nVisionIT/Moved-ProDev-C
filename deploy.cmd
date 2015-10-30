@@ -82,6 +82,14 @@ IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
 
 IF !ERRORLEVEL! NEQ 0 goto error
 
+
+:: 3. Running tests
+echo Running tests
+Invoke-RestMethod https://api.runscope.com/radar/a736d6dd-d009-4dbd-844a-685e6df4c258/trigger?runscope_environment=aaf4e675-d34a-4593-8a9f-0f842a3a1529
+
+
+IF !ERRORLEVEL! NEQ 0 goto error
+
 :: 3. KuduSync
 IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
   call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_TEMP%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
