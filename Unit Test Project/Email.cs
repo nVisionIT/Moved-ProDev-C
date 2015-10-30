@@ -20,7 +20,7 @@ namespace Unit_Test_Project
         {
             Assert.IsTrue(sender.SendEmail(new EmailModel { FromEmailAddress = "test@test.com", ToEmailAddress = "test@test.com", Body = "Body", Subject = "Subject" }));
         }
-
+        
         [TestMethod]
         public void SendEmail_FailOnEmptyEmailTo()
         {
@@ -39,9 +39,12 @@ namespace Unit_Test_Project
             Assert.IsFalse(sender.SendEmail(new EmailModel { FromEmailAddress = null, ToEmailAddress = "test@test.com", Body = "Body", Subject = "Subject" }));
         }
 
+
+
         [TestMethod]
         public void SendEmail_FailOnInvalidEmailFrom()
         {
+
             Assert.IsFalse(sender.SendEmail(new EmailModel { FromEmailAddress = "InvalidemailFrom", ToEmailAddress = "test@test.com", Body = "Body", Subject = "Subject" }));
         }
     }
