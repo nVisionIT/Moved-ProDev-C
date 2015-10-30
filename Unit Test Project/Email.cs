@@ -12,6 +12,7 @@ namespace Unit_Test_Project
     [TestClass]
     public class Email
     {
+
         IEmailSender sender = (IEmailSender)BusinessLogicFactory.BusinessLogicFactory.CreateBusinessObject<IEmailSender>();
 
         [TestMethod]
